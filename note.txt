@@ -1,0 +1,21 @@
+address: 0x2caaa673ea3106accc248c80bdbbe700819c26b39e50199eb73cafccb69d695
+max_fee: 955800000000000
+
+class_hash: 0x4886c82a0f1ab4d27dd824aff735fb492f1fa6c40ef93f014a3edb25e7f72e5
+
+contract_address: 0x76c3077482defa3512ab196c688938238aab66aeec0a939f90b507d7388d563
+
+
+
+
+
+
+sncast --url http://0.0.0.0:5050 account create --name katana --class-hash 0x05400e90f7e0ae78bd02c77cd75527280470e2fe19c54970dd79dc37a9d3645c
+sncast --url http://0.0.0.0:5050 account deploy --name katana --class-hash 0x05400e90f7e0ae78bd02c77cd75527280470e2fe19c54970dd79dc37a9d3645c
+
+sncast --account katana --url http://0.0.0.0:5050 declare --contract-name HelloStarknet
+sncast --account katana --url http://0.0.0.0:5050 deploy --class-hash 0x4886c82a0f1ab4d27dd824aff735fb492f1fa6c40ef93f014a3edb25e7f72e5
+
+
+sncast --account katana --url http://0.0.0.0:5050 invoke --contract-address 0x76c3077482defa3512ab196c688938238aab66aeec0a939f90b507d7388d563 --function "increase_balance" --calldata 0x42
+sncast --account katana --url http://0.0.0.0:5050 call --contract-address 0x76c3077482defa3512ab196c688938238aab66aeec0a939f90b507d7388d563 --function "get_balance"
